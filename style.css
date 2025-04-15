@@ -12,12 +12,14 @@ a {
 
 .main {
     height: 100vh;
+    width: 100%;
     background-image: url("photo.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .sidebar-menu {
-    width: 20vw;
+    width: 260px;
     height: 100%;
     background-color: rgba(145, 139, 139, 0.187);
     position: fixed;
@@ -25,18 +27,17 @@ a {
     transition: all 0.5s linear;
 }
 
+@media screen and (max-width:1200px){
+    .sidebar-menu{
+        width: 100px;
+    }
+}
+
 .main input {
     display: none;
 }
 
-.sidebar-menu .top {
-    display: flex;
-    justify-content: center;
-    gap: 65px;
-    position: relative;
-    cursor: pointer;
 
-}
 
 .main .btn-one {
     position: absolute;
@@ -56,12 +57,18 @@ a {
     transition: all ease-in-out 0.3s;
 }
 
-.top .btn-two svg {
+.btn-two svg {
     transform: scale(1.2);
     color: grey;
     cursor: pointer;
     position: absolute;
     top: 10px;
+    left: 230px;
+}
+@media screen and (max-width:1200px){
+    .btn-two svg{
+        left: 35px;
+    }
 }
 
 .btn-two {
@@ -73,12 +80,19 @@ a {
     transition: all ease-in-out 0.3s;
 }
 
-.top .logo {
+.logo {
     color: white;
-    font-size: 1.8em;
+    font-size: 1.6em;
     font-weight: 700;
-    justify-content: flex-start;
+    position: relative;
+    top: 4px;
+    left: 35px;
 
+}
+@media screen and (max-width:1200px){
+    .logo{
+        display: none;
+    }
 }
 
 .mid {
@@ -101,6 +115,17 @@ a {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+@media screen and (max-width:1200px){
+    .mid ul{
+        padding-top: 50px;
+    }
+    .mid ul li{
+        justify-content: center;
+    }
+    .mid ul li a{
+        display: none;
+    }
 }
 
 .mid ul li:hover {
@@ -125,6 +150,12 @@ a {
     bottom: 100px;
     left: 60px;
 }
+@media screen and (max-width:1200px){
+    .socialmedia-link{
+        transform: scale(0.68);
+        left: -23px;
+    }
+}
 
 .socialmedia-link a {
     color: white;
@@ -144,6 +175,6 @@ a {
     opacity: 0;
 }
 
-#check:checked~.sidebar-menu .top .btn-two {
+#check:checked~.sidebar-menu .btn-two {
     opacity: 1;
 }
